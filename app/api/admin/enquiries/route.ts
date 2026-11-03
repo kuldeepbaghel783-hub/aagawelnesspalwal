@@ -9,7 +9,11 @@ export async function GET() {
   if (!session) return NextResponse.json({ success: false, message: "Unauthorized" }, { status: 401 });
   try {
     await connectDB();
-    const enquiries = await Enquiry.find().sort({ createdAt: -1 }).limit(300).lean();
+const enquiries = await Enquiry.find({})
+  .sort({ createdAt: -1 })
+  .limit(300)
+  .lean();
+  
     return NextResponse.json({ success: true, enquiries: enquiries.map((item: any) => ({ ...item, _id: item._id.toString(), createdAt: item.createdAt?.toISOString(), updatedAt: item.updatedAt?.toISOString() })) });
   } catch (error) {
     console.error("Loading enquiries failed:", error);
