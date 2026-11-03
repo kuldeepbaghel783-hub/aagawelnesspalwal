@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{color-scheme:light}
+html{scroll-behavior:smooth}
+body{background:#f8f7f0;color:#242b27}
+.container-shell{width:min(1240px,calc(100% - 40px));margin-inline:auto}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#174b34;padding:15px 24px;color:white;font-size:14px;font-weight:600;transition:.2s ease}
+.btn-primary:hover{background:#0e3827;transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid rgba(35,76,58,.25);border-radius:999px;padding:14px 22px;color:#234c3a;font-size:14px;font-weight:600;transition:.2s ease}
+.btn-secondary:hover{background:white}
+.eyebrow{color:#557361;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.section-title{color:#234c3a;font-size:clamp(2rem,4vw,3.5rem);line-height:1.08;letter-spacing:-.045em;font-weight:600}
+.image-cover{background-position:center;background-size:cover}
+.form-label{display:grid;gap:8px;color:#35453b;font-size:13px;font-weight:600}
+.form-input{width:100%;border:1px solid #dce3db;border-radius:12px;background:#fff;padding:13px 14px;color:#242b27;font-size:14px;outline:none}
+.form-input:focus{border-color:#557361;box-shadow:0 0 0 3px rgba(85,115,97,.12)}
+::selection{background:#a8b99d;color:#173829}
+
+
+/* AAGA split hero: warm botanical canvas with an arched clinic photograph. */
+.aaga-hero {
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    ),
+    url("/images/hero-background.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.aaga-hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  opacity:.22;
+  background-image:
+    radial-gradient(ellipse at 9% 20%,rgba(95,125,88,.18) 0 1px,transparent 2px),
+    radial-gradient(ellipse at 90% 76%,rgba(95,125,88,.16) 0 1px,transparent 2px);
+  background-size:38px 38px,46px 46px;
+}
+.aaga-botanical{
+  pointer-events:none;
+  position:absolute;
+  z-index:0;
+  width:240px;
+  height:340px;
+  opacity:.22;
+  filter:blur(.2px);
+  background:
+    radial-gradient(ellipse 25px 72px at 28% 20%,#829b7d 0 48%,transparent 52%),
+    radial-gradient(ellipse 24px 68px at 65% 36%,#829b7d 0 48%,transparent 52%),
+    radial-gradient(ellipse 22px 62px at 26% 58%,#829b7d 0 48%,transparent 52%),
+    radial-gradient(ellipse 24px 70px at 70% 78%,#829b7d 0 48%,transparent 52%);
+}
+.aaga-botanical-left{left:-80px;top:12px;transform:rotate(-32deg)}
+.aaga-botanical-right{right:-75px;bottom:18px;transform:rotate(28deg) scale(.9)}
+.aaga-hero-wave{
+  pointer-events:none;
+  position:absolute;
+  z-index:1;
+  height:64px;
+  left:-4%;
+  right:-4%;
+  bottom:-30px;
+  border-radius:50% 50% 0 0 / 80% 80% 0 0;
+  background:#f8f7f0;
+}
+@media(max-width:767px){
+ .aaga-hero .container-shell{padding-top:54px;padding-bottom:72px}
+ .aaga-hero-photo{height:340px}
+ .aaga-botanical{opacity:.12}
+}
