@@ -8,8 +8,6 @@
 ```bash
 npm install
 npm run dev
-```
-Open http://localhost:3000
 
 ## Before publishing
 1. The supplied AAGA logo is already included at `public/aaga-logo.png` (transparent background) and integrated into the header and footer.
