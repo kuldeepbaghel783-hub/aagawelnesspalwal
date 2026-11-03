@@ -43,11 +43,11 @@ export async function PUT(request:Request) {
     const parsed = contentSchema.safeParse(await request.json());
     if (!parsed.success) return NextResponse.json({success:false,message:"Please check the content fields.",issues:parsed.error.flatten()},{status:400});
     await connectDB();
-    await SiteContent.findOneAndUpdate(
-      {key:"main"},
-      {$set:{content:parsed.data}},
-      {upsert:true,new:true,runValidators:true}
-    );
+   await SiteContent.findOneAndUpdate(
+  { key: "main" },
+  { $set: { content: parsed.data } },
+  { upsert: true, new: true, runValidators: true }
+);
     return NextResponse.json({success:true,message:"Website content saved."});
   } catch(error) {
     console.error("Saving site content failed:",error);
