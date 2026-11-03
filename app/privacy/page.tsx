@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = { title: "Privacy Policy" };
+export default function Privacy() {
+ return <section className="container-shell max-w-3xl py-20"><p className="eyebrow">Legal</p><h1 className="section-title mt-4">Privacy policy</h1><p className="mt-6 leading-8 text-muted">This starter website currently does not store appointment form submissions. The enquiry form opens WhatsApp with the message you choose to send. WhatsApp is operated by Meta and its own privacy terms apply.</p><p className="mt-4 leading-8 text-muted">Before launch, AAGA should publish a complete privacy notice covering any analytics, cookies, contact methods, data retention, access requests and third-party services actually used by the clinic. Have this notice reviewed for applicable Indian privacy requirements.</p><p className="mt-4 text-sm text-muted">Last updated: November 2026. Replace this starter text with the clinic's approved policy before production.</p></section>;
+}
