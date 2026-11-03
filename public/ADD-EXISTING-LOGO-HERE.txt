@@ -1,0 +1,1 @@
+Place the approved AAGA logo here as aaga-logo.png, then update Header.tsx to use it.
